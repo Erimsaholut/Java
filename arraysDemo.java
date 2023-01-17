@@ -1,4 +1,4 @@
-public class Main {
+public class arraysDemo {
     public static void main(String[] args) {
         String myName = "Erim";
         //System.out.println(myName);
