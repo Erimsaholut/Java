@@ -7,7 +7,7 @@ public class Course {
     String prefix;
     int note;
 
-    Course(String name, String code, String prefix, Teacher teacher) {
+    Course(String name, String code, String prefix) {
         this.name = name;
         this.code = code;
         this.prefix = prefix;
@@ -16,7 +16,6 @@ public class Course {
 
     void addTeacher(Teacher teacher) {
         if (teacher.branch.equals(this.name)) {
-
             this.teacher = teacher;
         } else {
             System.out.println("Teacher and branchs are not compatible");

@@ -5,12 +5,12 @@ public class Student {
     Course c2;
     Course c3;
     String name;
-    String stuNo;
+    int stuNo;
     String classes;
     double average;
     boolean isPass;
 
-    Student(String name, String stuNo, String classes, Course c1, Course c2, Course c3) {
+    Student(String name, int stuNo, String classes, Course c1, Course c2, Course c3) {
         this.name = name;
         this.stuNo = stuNo;
         this.classes = classes;
@@ -33,12 +33,23 @@ public class Student {
         }
     }
 
-        void printNote(){
-            System.out.println(c1.name+" note = "+c1.note);
-            System.out.println(c2.name+" note = "+c2.note);
-            System.out.println(c3.name+" note = "+c3.note);
-        }
-
-
+    void printNote() {
+        System.out.println(c1.name + " note = " + c1.note);
+        System.out.println(c2.name + " note = " + c2.note);
+        System.out.println(c3.name + " note = " + c3.note);
     }
+
+    void isPassed() {
+        this.average = (double) (c1.note + c2.note + c3.note) / 3;
+        if (this.average > 50){
+            System.out.println(name+ " Passed the class ! ! !");
+            isPass=true;
+        }else {
+            System.out.println(name+ " failed hahahahahah :D :D :D");
+            isPass=false;
+        }
+    }
+
+
+}
 
