@@ -1,4 +1,4 @@
-package motods;
+package methods;
 
 public class method1 {
     static int power(int base, int exp) {
