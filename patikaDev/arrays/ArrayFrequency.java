@@ -2,20 +2,25 @@ package arrays;
 
 public class ArrayFrequency {
     public static void main(String[] args) {
-        int[] myArray = {10, 20, 20, 10, 10, 20, 5, 20};
-        int repeat = 0;
+        int[] arr = {10, 20, 20, 10, 10, 20, 5, 20};
 
-        for (int i : myArray) {
-            for (int j : myArray) {
-                if (i == j) {
-                    repeat++;
+        int[] frequencyArray = new int[arr.length];
+
+        for (int i = 0; i < arr.length; i++) {
+            int count = 1;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    count++;
                 }
             }
-                System.out.println(i+"= "+repeat);
-            repeat=0;
+            frequencyArray[i] = count;
         }
 
-
-
+        for (int i = 0; i < arr.length; i++) {
+            if (frequencyArray[i] != 0) {
+                System.out.println(arr[i] + "=" + frequencyArray[i]);
+                frequencyArray[i] = 0;
+            }
+        }
     }
 }
