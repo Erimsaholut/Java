@@ -100,7 +100,7 @@ public class MineSwapper {
                 }
             }
 
-            if (myArea[userY][userX] != '-') {
+            if (myArea[userY][userX] != '-' && myArea[userY][userX] != '*') {
                 System.out.println("You already selected here");
             }else {
                 //if not find bomb count around the selection
