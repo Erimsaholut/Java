@@ -35,15 +35,15 @@ class Beer {
 
 class Separator {
     void shortSeperator() {
-        System.out.println("\n############\n");
+        System.out.println("\n\n############\n\n");
     }
 
     void midSeperator() {
-        System.out.println("\n\n########################\n\n");
+        System.out.println("\n\n\n########################\n\n\n");
     }
 
     void longSeperator() {
-        System.out.println("\n\n\n####################################\n\n\n");
+        System.out.println("\n\n\n\n####################################\n\n\n\n");
     }
 }
 
@@ -136,6 +136,13 @@ public class Giris {
         System.out.println("Merhaba diyecekler ve hoş geldin !");
         Scanner input = new Scanner(System.in);
         Separator sep = new Separator();
+
+        int _myNumber = 90;
+        System.out.println(_myNumber);
+        System.out.println(15/8);
+
+        sep.midSeperator();
+
         // int a = input.nextInt();
         // System.out.println(a);
         plaka(6);
