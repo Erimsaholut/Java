@@ -22,14 +22,15 @@ public class Main {
         x = (float) 10.0; // hata yok
         System.out.println(x);
 
-double sayac = 2;
+        double sayac = 2;
         System.out.println(sayac);
         int deger = 8;
         double kayac = deger;
         System.out.println();
-        System.out.println(deger+" "+kayac);
+        System.out.println(deger + " " + kayac);
 
         int charnum = 'A';
         System.out.println(charnum);
+
     }
 }
