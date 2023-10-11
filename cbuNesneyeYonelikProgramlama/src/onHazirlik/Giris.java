@@ -1,5 +1,6 @@
 package onHazirlik;
 
+import java.security.spec.RSAOtherPrimeInfo;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -317,9 +318,57 @@ public class Giris {
 
         sep.shortSeperator();
 
-        a = 2;
-        b = 5;
-        c = 6;
+        System.out.println("true ^ true = " + (true ^ true));
+        System.out.println("true ^ false = " + (true ^ false));
+        System.out.println("false ^ false = " + (false ^ false));
+        System.out.println("false == false = " + (false == false));
+
+        sep.midSeperator();
+
+        final int BIRTH_DATE = 2003;
+
+        // BIRTH_DATE++; // BIRTH_DATE += 1; Bunlar hep hata
+
+        System.out.println(BIRTH_DATE + " " + (BIRTH_DATE + 1));
+
+        String string1 = "My ";
+        String string2 = "Name Is: ";
+        String string3 = "Erimsah";
+
+        String string4 = string1 + string2 + string3;
+        System.out.println(string4);
+
+        System.out.println("Length:");
+        System.out.println(string4.length());
+        System.out.println("to Lower, to Upper: \n");
+        System.out.println(string4.toLowerCase());
+        System.out.println(string4.toUpperCase());
+
+        System.out.println("\nSubString: ");
+        System.out.println(string4.substring(5));
+        System.out.println(string4.substring(0, 8));
+
+        System.out.println("\nindexOf: ");
+        System.out.println(string4.indexOf("E"));
+        System.out.println(string4.indexOf('E'));
+        System.out.println(string4.indexOf('Ğ'));
+
+        String denemeStr = "   abcdefghijklmne    ";
+        System.out.println(denemeStr.indexOf("e"));
+        System.out.println(denemeStr.indexOf("e", 5)); //
+        System.out.println(denemeStr.lastIndexOf("e"));
+
+        System.out.println("\nCompare to, charAt, trim:\n");
+        System.out.println(denemeStr.trim());
+        System.out.println(denemeStr.charAt(17));
+        System.out.println(denemeStr.compareTo(denemeStr));
+        System.out.println(denemeStr.compareTo("abc")); // yeni eleman büyük ----
+        System.out.println("abcdef".compareTo("abc"));// bizimki büyük ++++
+
+        System.out.println("Equals :\n");
+        System.out.println(("ABC").equals("ABC"));
+        System.out.println(("ABC").equals("Abc"));
+        System.out.println(("ABC").equalsIgnoreCase("Abc"));
 
 
     }
