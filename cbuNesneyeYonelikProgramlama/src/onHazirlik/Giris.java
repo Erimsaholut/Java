@@ -133,6 +133,24 @@ public class Giris {
 
     }
 
+    public static void ucuncuSlaytOrnek(int n) {
+        int deger = (int) Math.signum(n);
+
+        switch (deger) {
+            case 1:
+                System.out.println((2.0 / 3.0) * ((float)Math.abs(n + 1)));
+
+                break;
+            case 0:
+                System.out.println(Math.sqrt(2.0 / 3.0));
+                break;
+            case -1:
+                System.out.println((2.0 / 3.0) * ((float)Math.abs(n - 1)));
+                break;
+        }
+    }
+
+
     public static void main(String[] args) {
         System.out.println("Merhaba diyecekler ve hoş geldin !");
         Scanner input = new Scanner(System.in);
@@ -361,7 +379,7 @@ public class Giris {
         System.out.println("\nCompare to, charAt, trim:\n");
         System.out.println(denemeStr.trim());
         System.out.println(denemeStr.charAt(17));
-        System.out.println(denemeStr.compareTo(denemeStr));
+        System.out.println(denemeStr.compareTo(denemeStr)); // eşit 00000
         System.out.println(denemeStr.compareTo("abc")); // yeni eleman büyük ----
         System.out.println("abcdef".compareTo("abc"));// bizimki büyük ++++
 
@@ -369,6 +387,46 @@ public class Giris {
         System.out.println(("ABC").equals("ABC"));
         System.out.println(("ABC").equals("Abc"));
         System.out.println(("ABC").equalsIgnoreCase("Abc"));
+
+
+        int x = 0;
+
+        if (x == 0) {
+            x++;
+            System.out.println("Coca Cola Zero");
+        } else if (x > 0) {
+            System.out.println("Don't drink cola man");
+        } else {
+            System.out.println("Do what do you want");
+        }
+
+        sep.midSeperator();
+
+        // float fltDeneme = 4.0; Hata verdi bir dil çünkü
+        float fltDeneme = 4.0F;
+        float fltDeneme2 = (float) 4.0;
+        System.out.println(Math.max(fltDeneme, fltDeneme2));
+
+        byte byte1 = 1;
+        byte byte2 = 2;
+        System.out.println(Math.min(byte1, byte2));
+        // diğer veri türlerinde de çalışıyor ama 2 den fazla değeri karşılaştıramıyor
+
+        System.out.println(Math.PI); //DOUBLE
+        System.out.println(Math.random());
+        System.out.println((int) (Math.random() * 100));
+        System.out.println(Math.round(1.49) + " " + Math.round(1.5));
+
+        System.out.println("math trigo\n");
+
+        System.out.println(Math.sin(90));
+        System.out.println(Math.cos(0));
+        System.out.println(Math.tan(45));
+        System.out.println(Math.toDegrees(1.0));
+        System.out.println(Math.toRadians(180.0));
+
+
+        ucuncuSlaytOrnek(10);
 
 
     }
