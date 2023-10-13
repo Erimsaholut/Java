@@ -138,16 +138,63 @@ public class Giris {
 
         switch (deger) {
             case 1:
-                System.out.println((2.0 / 3.0) * ((float)Math.abs(n + 1)));
+                System.out.println((2.0 / 3.0) * ((float) Math.abs(n + 1)));
 
                 break;
             case 0:
                 System.out.println(Math.sqrt(2.0 / 3.0));
                 break;
             case -1:
-                System.out.println((2.0 / 3.0) * ((float)Math.abs(n - 1)));
+                System.out.println((2.0 / 3.0) * ((float) Math.abs(n - 1)));
                 break;
         }
+    }
+
+    public static void zarSalla() {
+
+        int bir = 0, iki = 0, uc = 0, dort = 0, bes = 0, alti = 0, n;
+
+        for (int i = 0; i < 100; i++) {
+
+            n = (int) (Math.random() * 6) + 1;
+
+            switch (n) {
+                case 1:
+                    bir += 1;
+                    break;
+                case 2:
+                    iki += 1;
+                    break;
+                case 3:
+                    uc += 1;
+                    break;
+                case 4:
+                    dort += 1;
+                    break;
+                case 5:
+                    bes += 1;
+                    break;
+                case 6:
+                    alti += 1;
+                    break;
+            }
+        }
+        System.out.println("Bir:" + bir + " iki:" + iki + " uc:" + uc + " dort:" + dort + " Bes:" + bes + " alti:" + alti);
+    }
+
+    public static void eSayisiBulma() {
+
+        int n = 1;
+        double eEski, eYeni, fark;
+        eEski = Math.pow(1.0 + 1.0 / n, n);
+        System.out.println("n=" + n + "icin" + "e=" + eEski);
+        do {
+            n++;
+            eYeni = Math.pow(1.0 + 1.0 / n, n);
+            fark = Math.abs(eYeni - eEski);
+            eEski = eYeni;
+            System.out.println("n=" + n + " icin " + " e=" + eYeni);
+        } while (fark >= 0.001);
     }
 
 
@@ -425,8 +472,29 @@ public class Giris {
         System.out.println(Math.toDegrees(1.0));
         System.out.println(Math.toRadians(180.0));
 
-
         ucuncuSlaytOrnek(10);
+
+        eSayisiBulma();
+
+        sep
+                .
+                midSeperator();
+
+        int mySonuc = 1, n;
+        for (n = 1; 10 >= n; n++) ;
+        mySonuc = mySonuc * n;
+        System.out.println(mySonuc);
+
+        System.out.println("sayaca calışıyor demek istemis, n iste aq = " + n);
+
+        zarSalla();
+
+        System.out.println("31 sayısı girme");
+        if(input.nextInt()==31){
+            System.out.println("Girme demiştim sana ");
+            System.exit(0);
+        }
+        System.out.println("Teşekkürler");
 
 
     }
