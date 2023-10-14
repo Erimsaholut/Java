@@ -1,5 +1,7 @@
 package onHazirlik;
 
+import jdk.jshell.execution.Util;
+
 import java.security.spec.RSAOtherPrimeInfo;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -45,6 +47,83 @@ class Separator {
 
     void longSeperator() {
         System.out.println("\n\n\n\n####################################\n\n\n\n");
+    }
+}
+
+class Fibonacci {
+
+
+    void calc(int n) {
+        int sayi1 = 1, sayi2 = 1, yeni;
+        System.out.print(sayi1 + " " + sayi2 + " ");
+        for (int i = 3; i < n; i++) {
+            yeni = sayi1 + sayi2;
+            System.out.print(yeni + " ");
+
+            sayi1 = sayi2;
+            sayi2 = yeni;
+
+        }
+    }
+
+}
+
+class Kuleler {
+
+    void dikdortgenkule(int n) {
+        for (int i = 1; i <= n; i++) {
+            System.out.print("* ");
+            if (i % 2 == 0) {
+                System.out.println();
+            }
+        }
+        System.out.println();
+    }
+
+    void dikUcgen(int n) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+
+        }
+        System.out.println();
+    }
+
+}
+
+class PrimeNumbers {
+
+    void printConclusion(boolean value, int n) {
+        if (value)
+            System.out.println(n + " sayisi asaldır");
+        else
+            System.out.println(n + " sayisi asal değildir");
+    }
+
+    boolean isPrime(int n) {
+        boolean isPrime = true;
+        for (int i = 2; i < n; i++) {
+            if (n % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        return isPrime;
+    }
+
+    void isPrimePrint(int n) {
+        printConclusion(isPrime(n), n);
+    }
+
+    void first100() {
+        for (int i = 2; i < 100; i++) {
+            if (isPrime(i)) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println();
     }
 }
 
@@ -195,6 +274,54 @@ public class Giris {
             eEski = eYeni;
             System.out.println("n=" + n + " icin " + " e=" + eYeni);
         } while (fark >= 0.001);
+    }
+
+    public static void systemExit() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("31 sayısı girme");
+        if (input.nextInt() == 31) {
+            System.out.println("Girme demiştim sana ");
+            System.exit(0);
+        }
+        System.out.println("Teşekkürler");
+    }
+
+    public static void ekok(int k, int l) {
+        int kucukSay;
+        int buyukSay = Math.max(k, l);
+        int i = 1;
+
+        do {
+            kucukSay = Math.min(k, l);
+            kucukSay *= i;
+            i++;
+        } while (kucukSay % buyukSay != 0);
+        System.out.println(kucukSay);
+
+    }
+
+    public static void tamBolenler(float n) {
+        for (int i = 2; i <= (n / 2); i++) {
+            if (n % i == 0) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println();
+    }
+
+    public static void isPerfect(int n) {
+        int toplam = 0;
+        for (int i = 1; i < n; i++) {
+            if (n % i == 0) {
+                toplam += i;
+            }
+        }
+        if (toplam == n) {
+            System.out.println(n + " mükemmel sayıdır");
+        } else
+            System.out.println(n + " mükemmel sayı değildir");
+
     }
 
 
@@ -489,13 +616,49 @@ public class Giris {
 
         zarSalla();
 
-        System.out.println("31 sayısı girme");
-        if(input.nextInt()==31){
-            System.out.println("Girme demiştim sana ");
-            System.exit(0);
+        //systemExit();
+
+        Fibonacci fibo = new Fibonacci();
+
+        fibo.calc(10);
+
+        sep.shortSeperator();
+
+        ekok(31, 23);
+
+        Kuleler muhendis = new Kuleler();
+
+        muhendis.dikUcgen(8);
+        muhendis.dikdortgenkule(10);
+
+        tamBolenler(60);
+
+        PrimeNumbers asal = new PrimeNumbers();
+        asal.isPrimePrint(60);
+        asal.first100();
+
+        tamBolenler(60);
+
+        isPerfect(6);
+
+
+        for (int i = 5; i>0 ; i--)
+            System.out.println(i);
+
+
+        int sayac;
+        for (sayac = 1; sayac <5 ; sayac++) {
+            if (sayac==3)
+                break;
+            System.out.println("Mrb");
         }
-        System.out.println("Teşekkürler");
+        System.out.println("Donguden sonra");
 
-
+        sayac = 1;
+        while (sayac<3){
+            System.out.println(sayac);
+            sayac++;
+        }
+        System.out.println("Tekrar sayisi = "+sayac);
     }
 }
