@@ -13,17 +13,20 @@ class PrivateExample {
     private int privateVariable;
 
     private void privateMethod() {
+        // Metot içeriği
     }
 }
  class PublicExample {
     public int publicVariable;
 
     public void publicMethod() {
-        }
+        // Metot içeriği
+    }
 }
 class ProtectedExample {
     protected int protectedVariable;
 
     protected void protectedMethod() {
+        // Metot içeriği
     }
 }
