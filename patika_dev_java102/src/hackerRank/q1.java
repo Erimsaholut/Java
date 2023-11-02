@@ -13,7 +13,7 @@ public class q1 {
             System.out.println("java.lang.Exception: Breadth and height must be positive");
             System.exit(0);
         }
-        System.out.println(h*b);
+        System.out.println(h * b);
 
 
     }

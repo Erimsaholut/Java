@@ -33,5 +33,6 @@ public class Main {
         isStaticVariableExitsWhenNobodyCallsIt.myStaticVariable = "I changed it";
         System.out.println(isStaticVariableExitsWhenNobodyCallsIt.myStaticVariable);
 
+        Kitap book = new Kitap("Harry Potter", 500, "JK Rowling");
     }
 }
