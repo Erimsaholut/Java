@@ -1,8 +1,15 @@
 package slaytDevam;
 
-import java.util.Scanner;
+import java.util.Objects;
 
 public class Ornekler {
+
+    static void arabalariKarsilastir(Araba a1, Araba a2) {
+        if ((Objects.equals(a1.getRenk(), a2.getRenk())) && (Objects.equals(a1.getBeygir(), a2.getBeygir())) && (Objects.equals(a1.getSonHiz(), a2.getSonHiz())))
+            System.out.println("Esittir");
+        else System.out.println("Esit degildir");
+    }
+
     public static void main(String[] args) {
         String[] beerBrands = new String[5];
         beerBrands[0] = "Efes";
@@ -71,20 +78,56 @@ public class Ornekler {
 
         VeriDondur p1 = new VeriDondur();
         VeriDondur p2 = new VeriDondur();
-        if (p1 == p2)
-            System.out.println("Ayni VeriDondur nesneleri");
-        else
-            System.out.println("Farkli VeriDondur nesneleri");
+        if (p1 == p2) System.out.println("Ayni VeriDondur nesneleri");
+        else System.out.println("Farkli VeriDondur nesneleri");
 
 
         VeriDondur p3 = new VeriDondur();
         VeriDondur p4 = p3;
 
-        if (p3 == p4)
-            System.out.println("Ayni VeriDondur nesneleri");
-        else
-            System.out.println("Farkli VeriDondur nesneleri");
+        if (p3 == p4) System.out.println("Ayni VeriDondur nesneleri");
+        else System.out.println("Farkli VeriDondur nesneleri");
+
+
+        Araba ferrari, fiat;
+        ferrari = new Araba();
+        fiat = new Araba();
+
+        ferrari.set("kirmizi", "450 HP", "320 km/s");
+        fiat.set("beyaz", "70 HP", "200 km/s");
+
+        System.out.println(fiat == ferrari);
+
+        fiat = ferrari;
+
+        System.out.println(fiat == ferrari);
+        System.out.println("Ferrari:");
+        ferrari.veriGoster();
+        System.out.println("Fiat:");
+        fiat.veriGoster();
+
+        Araba opel, bmw;
+        opel = new Araba();
+        bmw = new Araba();
+
+        opel.set("kirmizi", "450 HP", "320 km/s");
+        bmw.set("kirmizi", "450 HP", "320 km/s");
+        System.out.println("bmw ve opel eşit mi = " + (bmw.equals(opel)));
+        System.out.println("bmw ve opel eşit mi = " + (bmw == opel));
+
+        arabalariKarsilastir(opel,bmw); // burada attirbuteleri karşılaştırdık ama hard code ile karşılaştırdık
+
+
+
+        opel = bmw;
+        System.out.println("bmw ve opel eşit mi = " + (bmw.equals(opel)));    // BURADA BELLEK ADRESLERİ KARŞILAŞTIRILDI
+        System.out.println("bmw ve opel eşit mi = " + (bmw == opel));
+
+
+        System.out.println(opel.toString());
+        System.out.println(bmw.toString());
+
+
+
     }
-
-
 }
