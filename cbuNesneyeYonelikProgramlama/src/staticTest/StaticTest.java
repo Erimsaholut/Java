@@ -2,6 +2,38 @@ package staticTest;
 
 import java.util.Scanner;
 
+class Araba {
+    private final String renk;
+    private int beygirGucu;
+
+    public void setBeygirGucu(int beygirGucu) {
+        this.beygirGucu = beygirGucu;
+    }
+
+    public void setHiz(int hiz) {
+        this.hiz = hiz;
+    }
+
+    private int hiz;
+
+    public Araba(String renk, int guc, int hiz) {
+        this.renk = renk;
+        this.beygirGucu = guc;
+        this.hiz = hiz;
+    }
+
+    public Araba(String renk) {
+        this.renk = renk;
+    }
+
+    public void veriGoster() {
+        System.out.println("Renk=" + this.renk);
+        System.out.println("Beygir gücü=" + this.beygirGucu);
+        System.out.println("Hız=" + this.hiz);
+        System.out.println();
+    }
+}
+
 public class StaticTest {
     public static void main(String[] args) {
         StaticOrnek s1 = new StaticOrnek();
@@ -44,7 +76,7 @@ public class StaticTest {
 
         Araba ferrari = new Araba("kirmizi", 450, 320);
 
-        
+
         Araba fiat = new Araba("beyaz");
         fiat.setBeygirGucu(70);
         fiat.setHiz(155);
@@ -52,39 +84,40 @@ public class StaticTest {
         ferrari.veriGoster();
         System.out.println("Fiat özellikleri");
         fiat.veriGoster();
+
+
+        Programci p = new Programci();
+        System.out.println("Calisan ucreti:" + p.maas);
+        System.out.println(" Programcinin Maas + ek ücreti:" + p.ekUcret);
+
+        Employe e1 = new Employe("Faruk", "Yıldız");
+        GeneralManager g1 = new
+                GeneralManager("Emre", "Çelen");
+// Ekrana Yazdırma Komutları:
+        System.out.println("--------------\n-> Personel Oluşturuldu\n--------------");
+        e1.printInfo();
+        System.out.println("--------------\n-> Genel Müdür Oluşturuldu\n--------------");
+        g1.printInfo();
+        System.out.println("--------------");
+
+
+        TextBook liseKitabi = new TextBook("Lise Kitabi");
+        liseKitabi.setSubject("Matematik");
+        liseKitabi.printInf();
+        System.out.println("--------------");
+        liseKitabi.reset("Üniversite Kitabi", "Felsefe");
+        liseKitabi.printInf();
+
+
     }
 }
 
-class Araba {
-    private String renk;
-    private int beygirGucu;
+class Calisan {
+    int maas = 40000;
+}
 
-    public void setBeygirGucu(int beygirGucu) {
-        this.beygirGucu = beygirGucu;
-    }
-
-    public void setHiz(int hiz) {
-        this.hiz = hiz;
-    }
-
-    private int hiz;
-
-    public Araba(String renk, int guc, int hiz) {
-        this.renk = renk;
-        this.beygirGucu = guc;
-        this.hiz = hiz;
-    }
-
-    public Araba(String renk) {
-        this.renk = renk;
-    }
-
-    public void veriGoster() {
-        System.out.println("Renk=" + this.renk);
-        System.out.println("Beygir gücü=" + this.beygirGucu);
-        System.out.println("Hız=" + this.hiz);
-        System.out.println();
-    }
+class Programci extends Calisan {
+    int ekUcret = maas + 1000;
 }
 
 class Toplayici {
@@ -94,5 +127,52 @@ class Toplayici {
 
     static double topla(double a, double b) {
         return a + b;
+    }
+}
+
+class Book {
+    private String name;
+
+    Book(String name) {
+        this.name = name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void printInf() {
+        System.out.println(name);
+    }
+
+}
+
+class TextBook extends Book {
+    private String subject;
+
+    TextBook(String name) {
+        super(name);
+    }
+
+    public void reset(String newName, String newSubject) {
+        setName(newName);
+        subject = newSubject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void printInf() {
+        System.out.println(super.getName());
+        System.out.println(subject);
     }
 }
