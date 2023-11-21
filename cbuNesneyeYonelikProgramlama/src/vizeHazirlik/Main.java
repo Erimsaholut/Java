@@ -1,8 +1,47 @@
 package vizeHazirlik;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+
+        int sınav = 3;
+        double var = 7.77;
+        System.out.println(sınav + var + "");
+        System.out.println("" + sınav + var);
+
+        int a = 6, b = 18, c = 3;
+        System.out.println(a);
+        System.out.println(b);
+        System.out.print("a=" + a);
+        System.out.println(", a+b=" + a + b);
+        System.out.println("a+b=" + (a + b));
+        System.out.println(a + b + "_");
+        System.out.println(a + " " + b + " ");
+
+
+        System.out.println(a+b+"___" + a+b);
+
+
+
+        System.out.println(a + b + c);
+        a = b - c;
+        System.out.println("a=" + a + " ,b=" + b + ", c= " + c);
+
+
+        Scanner input = new Scanner(System.in);
+        String test = input.nextLine();
+        System.out.println(test);
+
+
+        String test2 = input.next();
+        String test3 = input.next();
+
+        System.out.println(test2);
+        System.out.println(test3);
+
         System.out.println("selami");
+
 
         int intBolmeSonucu = 10 / 4;
         double doubleBolmeSonucu = 10 / 4.0;
@@ -13,7 +52,8 @@ public class Main {
 
         System.out.println("\n\n*****\n\n");
 
-        int a = 3, b = 5, c;
+        a = 3;
+        b = 5;
         c = a * ++b / 5 - 12 * a + b;
         System.out.println("c: " + c); // c: -27
         boolean bool = a + b < a * c && a + b >= b + a;
@@ -55,6 +95,10 @@ public class Main {
 
         System.out.println(abab);
         System.out.println(baba);
+
+        //float nasi = 3.0;
+        float nasil = (float) 3.0;
+        float nas = 3;
 
 
     }
