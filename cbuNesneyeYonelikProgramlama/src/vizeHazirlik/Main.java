@@ -20,13 +20,15 @@ public class Main {
         System.out.println(a + " " + b + " ");
 
 
-        System.out.println(a+b+"___" + a+b);
-
+        System.out.println(a + b + "___" + a + b);
 
 
         System.out.println(a + b + c);
-        a = b - c;
+        a = 1;
+        b = 3;
+        c = 4;
         System.out.println("a=" + a + " ,b=" + b + ", c= " + c);
+        System.out.println(a+++b+++c);
 
 
         Scanner input = new Scanner(System.in);
