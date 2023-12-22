@@ -21,7 +21,7 @@ public class Kasiyer {
 
     public void isVakti() {
         do {
-            System.out.println("Salata için 1 hamburger 2 pizza için 3 tatlı için 4 kodunu giriniz; çıkmak için 5 kodunu giriniz");
+            System.out.println("Salata için 1 hamburger 2 pizza için 3 tatlı için 4 kodunu giriniz; çıkmak için 5 kodunu giriniz.");
             secim = input.nextInt();
             if (secim == 5) {
                 break;

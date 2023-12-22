@@ -660,5 +660,7 @@ public class Giris {
             sayac++;
         }
         System.out.println("Tekrar sayisi = "+sayac);
+
+        System.out.println(testStatic.ortala(3, 9));
     }
 }

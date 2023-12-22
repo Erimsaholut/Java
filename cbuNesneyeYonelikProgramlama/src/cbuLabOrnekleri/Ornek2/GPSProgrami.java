@@ -14,13 +14,14 @@ public class GPSProgrami {
 
     private void konumBilgisi(String konumVerisi) {
         String veriTuru = konumVerisi.substring(1, 6);
-        System.out.println(konumVerisi);
+        //System.out.println(konumVerisi);
 
         for (int i = 0; i < konumVerisi.length(); i++) {
             int ascii = konumVerisi.charAt(i);
             if (ascii > 47 && ascii < 58) {
                 if (Objects.equals(enlem, "")) {
                     enlem = konumVerisi.charAt(i) + "" + konumVerisi.charAt(i + 1);
+                    i++;
                 } else {
                     boylam = konumVerisi.charAt(i) + "" + konumVerisi.charAt(i + 1);
                     break;
