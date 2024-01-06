@@ -24,8 +24,6 @@ public class CokbicimlilikOrn2 {
         nesneAl(m);
         nesneAl(n);
 
-        // Hayvan x = new Canli();
-
     }
 }
 
